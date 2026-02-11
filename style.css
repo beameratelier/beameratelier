@@ -82,51 +82,43 @@ h3 {
   border-radius: 6px;
 }
 
-.download {
+/* NEW Download Button Style */
+
+.download-button {
   display: inline-block;
   margin-top: 14px;
-  font-size: 16px;
+  padding: 10px 22px;
+  background-color: var(--brand-primary);
+  color: #ffffff;
   text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
 }
 
-/* -----------------------------
-   Theme-specific color accents
-   ----------------------------- */
-
-.snowdrop h4,
-.snowdrop .download {
-  color: var(--brand-primary);
+.download-button:hover {
+  opacity: 0.9;
 }
 
-.durham h4,
-.durham .download {
-  color: #5A2A6E;
+/* Available Soon */
+
+.coming-soon {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #888888;
 }
 
-.minimalistic h4,
-.minimalistic .download {
-  color: var(--brand-primary);
-}
+/* Theme Headline Colors Only */
 
-.hourglass h4,
-.hourglass .download {
-  color: #4E5568;
-}
-
-.donut h4,
-.donut .download {
-  color: #6B6B6B;
-}
-
-.battery h4,
-.battery .download {
-  color: #556B7A;
-}
-
-.futurista h4,
-.futurista .download {
-  color: #4E5568;
-}
+.snowdrop h4 { color: var(--brand-primary); }
+.durham h4 { color: #5A2A6E; }
+.minimalistic h4 { color: var(--brand-primary); }
+.pathway h4 { color: var(--brand-primary); }
+.hourglass h4 { color: #4E5568; }
+.donut h4 { color: #6B6B6B; }
+.battery h4 { color: #556B7A; }
+.futurista h4 { color: #4E5568; }
 
 footer {
   margin-top: 120px;
