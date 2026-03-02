@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ltx-talk — Beamer Atelier</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id="top">
+  <h1>ltx-talk</h1>
+  <h2>An accessible, teaching-first LaTeX class for presentations</h2>
+
+  <p class="intro">
+    <strong>ltx-talk</strong> is a modern LaTeX class for building on-screen presentations,
+    handouts, and speaker notes using a <em>frame → slides</em> model with lightweight overlay
+    specifications. It is designed for structured, long-form teaching where clarity, stability,
+    and accessibility matter.
+  </p>
+
+  <a class="button" href="index.html">Home</a>
+  &nbsp;&nbsp;
+  <a class="button" href="#why">Why ltx-talk?</a>
+  &nbsp;&nbsp;
+  <a class="button" href="#accessibility">Accessibility</a>
+  &nbsp;&nbsp;
+  <a class="button" href="#install">Install</a>
+  &nbsp;&nbsp;
+  <a class="button" href="#mwe">Minimal example</a>
+  &nbsp;&nbsp;
+  <a class="button" href="#stage-talk">Stage-talk</a></header>
+
+<section id="stage-talk">
+  <h3>Stage-talk: a tagged theme layer for ltx-talk</h3>
+
+  <p>
+    <strong>Stage-talk</strong> is a companion theme layer for <strong>ltx-talk</strong> focused on
+    <strong>tagged PDF output</strong> for teaching materials. It provides a clean, lecture-first visual system
+    while exposing practical macros and patterns for <strong>semantic tagging</strong> of tables and figures
+    (reading order, structure, and alternative text), aligning with modern PDF accessibility workflows.
+  </p>
+
+  <div class="theme stagetalk">
+    <h4>Stage-talk (ltx-talk tagging theme)</h4>
+    <img class="theme-preview" src="assets/Stage-talk.png" alt="Stage-talk theme preview: ltx-talk slides with structured tagging for tables and figures">
+    <p>
+      Designed for long-form lectures where clarity and accessibility matter. Stage-talk helps you produce
+      structured, tag-aware slides and handouts by supporting consistent tagging patterns for
+      <em>tables (Table/THead/TBody)</em> and <em>figures with meaningful alt text</em>.
+    </p>
+
+    <a class="download-button" href="assets/Stage-talk Demo.pdf">Download Demo (PDF)</a><br>
+    <a class="download-button" href="assets/Stage-talk_theme.zip">Download Package (ZIP)</a>
+  </div>
+
+  <p class="note">
+    Tip: To benefit from tagging, compile with LuaLaTeX and enable tagging via <code>\DocumentMetadata{tagging=on}</code>.
+    For best results, add alt text to all figures and use the provided table tagging patterns for any tabular data.
+  </p>
+
+  <a class="button" href="#top">Go up</a>
+</section>
+
+
+
+<section id="why">
+  <h3>Why ltx-talk?</h3>
+
+  <p>
+    Many slide systems optimise for short talks and visual novelty. Teaching is different:
+    it is long-form, content-dense, and requires sustained audience orientation.
+  </p>
+
+  <p>
+    <strong>ltx-talk</strong> is built around a simple idea: content lives in a <code>frame</code>,
+    and each frame can produce one or more <em>slides</em> (pages) using overlay specifications.
+    This makes it natural to reveal material step-by-step without duplicating entire slides.
+  </p>
+
+  <ul class="bullets">
+    <li><strong>Teaching-first structure</strong>: stable layouts and predictable movement.</li>
+    <li><strong>Frame → slides model</strong>: build one frame, reveal progressively.</li>
+    <li><strong>Support material</strong>: presentations, handouts, and speaker notes.</li>
+    <li><strong>Modern LaTeX integration</strong>: designed to work with the current PDF management and tagging ecosystem.</li>
+  </ul>
+
+  <p class="note">
+    If you have used Beamer, the mental model is familiar (frames, overlays). The difference is that
+    ltx-talk is designed for a modern, accessible PDF workflow and for lecture-style pacing.
+  </p>
+</section>
+
+<section id="what">
+  <h3>What ltx-talk gives you</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>1) Frames and overlays</h4>
+      <p>
+        Write content once, then use overlay specifications to control when items appear. The class provides
+        a straightforward overlay syntax (e.g., pointed-bracket specifications) to build multi-step explanations
+        without cloning slides.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>2) Structured long-form lectures</h4>
+      <p>
+        A stable visual system supports attention. Instead of “effects”, the design emphasis is on
+        sectional structure, consistent margins, and predictable typographic hierarchy.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>3) Handouts and notes</h4>
+      <p>
+        Lecture delivery often needs multiple outputs: an on-screen deck for class, a handout for revision,
+        and notes for the lecturer. ltx-talk is built with that broader workflow in mind.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="accessibility">
+  <h3>Accessibility: what this means (and why it matters)</h3>
+
+  <p>
+    Accessibility is not a “nice to have” in modern teaching. Institutions increasingly require
+    documents that work with assistive technologies (screen readers, reflow, proper reading order).
+  </p>
+
+  <p>
+    In PDF terms, this typically means producing a <strong>tagged PDF</strong> that aims for
+    <strong>PDF/UA</strong> compliance. LaTeX has made major progress here through the
+    <strong>LaTeX Tagging Project</strong>, enabling tagged output through <code>\DocumentMetadata</code>.
+  </p>
+
+  <h4>Key concepts</h4>
+  <ul class="bullets">
+    <li><strong>Tags</strong>: structural labels (headings, lists, figures, tables) that allow correct reading order.</li>
+    <li><strong>Alt text</strong>: meaningful descriptions for figures, so non-visual users can access content.</li>
+    <li><strong>Math accessibility</strong>: enabling MathML representations for screen readers.</li>
+    <li><strong>PDF/UA-2</strong>: a modern accessibility standard supported via the LaTeX PDF management layer.</li>
+  </ul>
+
+  <h4>A practical ltx-talk accessibility baseline</h4>
+  <p>
+    In practice, you enable tagging and the PDF standard in the metadata block, and optionally enable
+    MathML tagging:
+  </p>
+
+  <pre><code>\DocumentMetadata{
+  tagging=on,
+  pdfstandard=ua-2,
+  lang=en-GB,
+  tagging-setup={math/setup={mathml-SE,mathml-AF}}
+}</code></pre>
+
+  <p class="note">
+    The best practice is to test your output (reading order, alt text presence, headings hierarchy) using
+    your institution’s tooling and workflows. Accessibility is a workflow, not only a compiler option.
+  </p>
+</section>
+
+<section id="install">
+  <h3>Installation and requirements</h3>
+
+  <h4>Local (recommended)</h4>
+  <ol class="steps">
+    <li><strong>Install a current TeX distribution</strong> (TeX Live recommended).</li>
+    <li><strong>Compile with LuaLaTeX</strong> for the most reliable modern tagged-PDF workflow.</li>
+    <li><strong>Check the documentation</strong>: run <code>texdoc ltx-talk</code> on your machine.</li>
+  </ol>
+
+  <h4>Overleaf</h4>
+  <ol class="steps">
+    <li>Set the compiler to <strong>LuaLaTeX</strong>.</li>
+    <li>Use a recent TeX Live image (Overleaf allows selecting versions in settings).</li>
+  </ol>
+
+  <h4>Common dependencies</h4>
+  <p>
+    Your TeX distribution should include the LaTeX PDF management and tagging support packages.
+    In most modern setups, these are provided automatically when you use <code>\DocumentMetadata</code>.
+  </p>
+</section>
+
+<section id="mwe">
+  <h3>Minimal working example (MWE)</h3>
+
+  <p>
+    Here is a compact starter you can copy into <code>main.tex</code> and compile with LuaLaTeX.
+  </p>
+
+  <pre><code>\DocumentMetadata{
+  tagging=on,
+  pdfstandard=ua-2,
+  lang=en-GB,
+  tagging-setup={math/setup={mathml-SE,mathml-AF}}
+}
+
+\documentclass{ltxtalk}
+
+\title{A short ltx-talk demo}
+\author{Beamer Atelier}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Why ltx-talk?}
+  \begin{itemize}
+    \item&lt;1-&gt; Teaching-first structure for long-form lectures
+    \item&lt;2-&gt; Frames can generate multiple slides (overlays)
+    \item&lt;3-&gt; Designed to work with modern tagged PDF workflows
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{A simple equation}
+  We can typeset math as usual:
+  \[ y_t = \alpha + \beta x_t + \varepsilon_t. \]
+\end{frame}
+
+\end{document}</code></pre>
+
+  <p class="note">
+    You can extend this by adding your preferred theme layer (e.g., Stage-talk) for a clean, tag-aware workflow.
+  </p>
+</section>
+
+<section id="workflow">
+  <h3>Suggested workflow for academics</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>Write for reading order</h4>
+      <p>
+        Keep the logical order of your explanation aligned with the visual order. Avoid “visual-only” placement
+        that breaks the narrative flow for screen readers.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Tag figures with meaningful alt text</h4>
+      <p>
+        Every figure should have a concise description that communicates the purpose of the image
+        (not only its appearance).
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Prefer structure over decoration</h4>
+      <p>
+        Use sectioning, consistent headings, and stable layout cues. This improves both accessibility and learning.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h3>FAQ</h3>
+
+  <h4>Is ltx-talk “a replacement for Beamer”?</h4>
+  <p>
+    It’s best to think of it as a modern presentation class with a similar conceptual model (frames and overlays),
+    but with a different emphasis: stable long-form teaching, multiple outputs, and compatibility with current PDF
+    tagging workflows.
+  </p>
+
+  <h4>Do I need PDF/UA for every lecture?</h4>
+  <p>
+    Not always, but building an accessibility-aware workflow now makes your materials more inclusive and more
+    future-proof (especially for institutional and public-facing teaching resources).
+  </p>
+
+  <h4>What about fonts, graphics, and complex layouts?</h4>
+  <p>
+    You can use them — but accessibility places additional responsibility on reading order, tagging, and alt text.
+    The goal is not to reduce ambition; it is to make sophisticated material reachable for more learners.
+  </p>
+</section>
+
+<footer>
+  © 2026 Beamer Atelier — Independent scholarly design project
+  <br>
+  <a href="index.html">Home</a> |
+  <a href="ltx-talk.html">ltx-talk</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="refund.html">Refund Policy</a> |
+  <a href="license.html">License Agreement</a> |
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

@@ -111,6 +111,9 @@ h3 {
 
 /* Theme Headline Colors Only */
 
+.stagetalk h4 { color: var(--brand-primary); }
+
+
 .snowdrop h4 { color: var(--brand-primary); }
 .durham h4 { color: #5A2A6E; }
 .minimalistic h4 { color: var(--brand-primary); }
@@ -130,4 +133,69 @@ footer {
 
 .go-up {
   margin-top: 60px;
+}
+
+/* ------------------------------------------------------
+   ltx-talk page helpers
+------------------------------------------------------ */
+
+.bullets {
+  margin-top: 14px;
+  margin-bottom: 18px;
+  padding-left: 22px;
+}
+
+.steps {
+  margin-top: 14px;
+  margin-bottom: 18px;
+  padding-left: 22px;
+}
+
+.note {
+  border-left: 4px solid var(--brand-primary);
+  padding: 12px 14px;
+  background: #f7f6fb;
+  border-radius: 6px;
+  max-width: 860px;
+}
+
+pre {
+  background: #f6f6f6;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  max-width: 920px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 920px;
+}
+
+.card {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 18px 18px;
+  background: #ffffff;
+}
+
+.card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--brand-primary);
+}
+
+@media (min-width: 860px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
