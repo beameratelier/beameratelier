@@ -67,8 +67,6 @@ h3 {
   opacity: 0.9;
 }
 
-/* Theme card styling */
-
 .theme {
   background: #ffffff;
   border: 1px solid #e6e6e6;
@@ -78,7 +76,6 @@ h3 {
   transition: all 0.18s ease;
 }
 
-/* subtle hover effect */
 .theme:hover {
   border-color: #d6d6d6;
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
@@ -93,16 +90,7 @@ h3 {
   font-size: 17px;
   max-width: 760px;
 }
-/*
-.theme-preview {
-  width: 100%;
-  max-width: 820px;
-  display: block;
-  margin: 18px 0;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-}
-  */
+
 .theme-preview {
   width: 100%;
   border-radius: 6px;
@@ -113,6 +101,17 @@ h3 {
 #themes {
   max-width: 1100px;
   margin: auto;
+}
+
+.theme-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #392F5A;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 .download-button {
@@ -143,7 +142,6 @@ h3 {
 /* Theme Headline Colors Only */
 
 .stagetalk h4 { color: var(--brand-primary); }
-
 .river h4 { color: #392F5A;}
 .snowdrop h4 { color: var(--brand-primary); }
 .durham h4 { color: #5A2A6E; }
